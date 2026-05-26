@@ -1,0 +1,37 @@
+<!-- Conversor de Horas
+O usuário informa uma quantidade de segundos em um input. Converta para horas, minutos e
+segundos. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Conversor de Horas</h1>
+
+<input id="segundos" type="number" placeholder="Digite os segundos">
+
+<button onclick="converter()">Converter</button>
+
+<h2>Resultado: <span id="resultado"></span></h2>
+
+<script>
+
+    function converter() {
+        let segundos = document.getElementById("segundos").value;
+
+        let horas = Math.floor(segundos / 3600);
+        let minutos = Math.floor((segundos % 3600) / 60);
+        let segundosRestantes = segundos % 60;
+
+        document.getElementById("resultado").innerHTML =
+            horas + " horas, " + minutos + " minutos e " + segundosRestantes + " segundos.";
+    }
+    
+    </script>
+
+</body>
+</html>

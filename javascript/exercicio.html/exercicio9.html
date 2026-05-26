@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Média com Recuperação</title>
+</head>
+<body>
+
+    <h1>Calculadora de Média</h1>
+
+    <label>Nota 1</label>
+    <input id="nota1" type="number">
+
+    <br><br>
+
+    <label>Nota 2</label>
+    <input id="nota2" type="number">
+
+    <br><br>
+
+    <label>Recuperação</label>
+    <input id="recuperacao" type="number">
+
+    <br><br>
+
+    <button onclick="calcular()">Calcular Média</button>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+
+        function calcular() {
+
+            let nota1 = Number(document.getElementById("nota1").value);
+            let nota2 = Number(document.getElementById("nota2").value);
+            let recuperacao = Number(document.getElementById("recuperacao").value);
+
+            let media = (nota1 + nota2) / 2;
+
+            if (media < 7) {
+
+                media = (media + recuperacao) / 2;
+
+                document.getElementById("resultado").innerHTML =
+                    "Média após recuperação: " + media;
+
+            } else {
+
+                document.getElementById("resultado").innerHTML =
+                    "Aluno aprovado! Média: " + media;
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

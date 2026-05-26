@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedra, Papel e Tesoura</title>
+</head>
+<body>
+
+    <h1>Pedra, Papel e Tesoura</h1>
+
+    <label>Escolha uma opção:</label>
+
+    <select id="jogador">
+        <option value="pedra">Pedra</option>
+        <option value="papel">Papel</option>
+        <option value="tesoura">Tesoura</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="jogar()">Jogar</button>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+
+        function jogar() {
+
+            let jogador = document.getElementById("jogador").value;
+
+            let opcoes = ["pedra", "papel", "tesoura"];
+
+            let computador =
+                opcoes[Math.floor(Math.random() * 3)];
+
+            let resultado = "";
+
+            if (jogador == computador) {
+
+                resultado = "Empate! Ambos escolheram " + computador;
+
+            }
+
+            else if (
+                (jogador == "pedra" && computador == "tesoura") ||
+                (jogador == "papel" && computador == "pedra") ||
+                (jogador == "tesoura" && computador == "papel")
+            ) {
+
+                resultado =
+                    "Você venceu! Computador escolheu " + computador;
+
+            }
+
+            else {
+
+                resultado =
+                    "Você perdeu! Computador escolheu " + computador;
+
+            }
+
+            document.getElementById("resultado").innerHTML = resultado;
+
+        }
+
+    </script>
+
+</body>
+</html>

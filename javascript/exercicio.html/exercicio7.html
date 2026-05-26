@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificador de Número Primo</title>
+</head>
+<body>
+
+    <h1>Verificador de Número Primo</h1>
+
+    <label>Digite um número</label>
+    <input id="numero" type="number">
+
+    <br><br>
+
+    <button onclick="verificar()">Verificar</button>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+
+        function verificar() {
+
+            let numero = Number(document.getElementById("numero").value);
+
+            let divisores = 0;
+
+            for (let i = 1; i <= numero; i++) {
+
+                if (numero % i == 0) {
+                    divisores++;
+                }
+
+            }
+
+            if (divisores == 2) {
+                document.getElementById("resultado").innerHTML =
+                    numero + " é um número primo";
+            } else {
+                document.getElementById("resultado").innerHTML =
+                    numero + " não é um número primo";
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

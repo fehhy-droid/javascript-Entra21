@@ -1,0 +1,53 @@
+<!-- Peça o peso e a altura do usuário através de inputs. Calcule o IMC e mostre a classificação: abaixo do
+peso, normal, sobrepeso ou obesidade. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Calcula IMC </h1>
+    
+    <label>Peso</label>
+<input id="peso" type="number" placeholder="Digite seu peso">
+
+<label>Altura</label>
+<input id="altura" type="number" step="0.01" placeholder="Digite sua altura">
+
+<button onclick="calcularIMC()">Calcular</button>
+
+<h2>Resultado: <span id="resultado"></span></h2>
+
+<script>
+
+    function calcularIMC() {
+    
+        let peso = document.getElementById("peso").value;
+        let altura = document.getElementById("altura").value;
+    
+        let imc = Number(peso) / (Number(altura) * Number(altura));
+    
+        let classificacao = "";
+    
+        if (imc < 18.5) {
+            classificacao = "Abaixo do peso";
+    
+        } else if (imc < 25) {
+            classificacao = "Peso normal";
+    
+        } else if (imc < 30) {
+            classificacao = "Sobrepeso";
+    
+        } else {
+            classificacao = "Obesidade";
+        }
+    
+        document.getElementById("resultado").innerHTML = imc.toFixed(2) + " " + classificacao;
+    }
+    
+    </script>
+</body>
+</html>

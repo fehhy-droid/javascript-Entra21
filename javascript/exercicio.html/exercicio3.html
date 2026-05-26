@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Simples</title>
+</head>
+<body>
+
+    <h1>Sistema de Login</h1>
+
+    <label>Usuário</label>
+    <input id="usuario" type="text" placeholder="Digite o usuário">
+
+    <br><br>
+
+    <label>Senha</label>
+    <input id="senha" type="password" placeholder="Digite a senha">
+
+    <br><br>
+
+    <button onclick="login()">Entrar</button>
+
+    <script>
+
+        function login() {
+
+            let usuario = document.getElementById("usuario").value;
+            let senha = document.getElementById("senha").value;
+
+            let usuarioCorreto = "admin";
+            let senhaCorreta = "1234";
+
+            if (usuario == usuarioCorreto && senha == senhaCorreta) {
+                alert("Login realizado com sucesso!");
+            } else {
+                alert("Usuário ou senha incorretos!");
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
