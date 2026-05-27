@@ -1,0 +1,15 @@
+body{
+    font-family: Arial;
+}
+
+.input-invalido{
+    border: 2px solid red;
+}
+
+.input-valido{
+    border: 2px solid green;
+}
+
+#erroEmail{
+    color: red;
+}
